@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Edit Contact</title>
+  </head>
+  <body>
+    <div class="conatiner">
+       <div class="container bg-secondary text-white my-2 p-1"><h1 class="text-center my-2">Edit Contact Page</h1></div>
+
+        <h4 class="text-center my-4">Edit Contact</h4>
+
+        <div class="container">
+            <form method="post" action="/edit-contact/<%= edt_contact._id %>">
+                <div class="mb-3">
+                    <label for="firstname" class="form-label">First Name</label>
+                    <input type="text" name="firstname" value="<%= edt_contact.firstname %>" class="form-control" id="firstname" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="lastname" class="form-label">Last Name</label>
+                    <input type="text" name="lastname" value="<%= edt_contact.lastname %>" class="form-control" name="lastname" id="lastname" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" name="email" value="<%= edt_contact.email %>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="text" name="phone" value="<%= edt_contact.phone %>" class="form-control" id="phone">
+                </div>
+                <div class="mb-3">
+                    <label for="addrs" class="form-label">Address</label>
+                    <textarea name="address" id="addrs" cols="50" rows="3"><%= edt_contact.address %></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-primary">Reset</button>
+            </form>
+
+            <div class="d-flex justify-content-center">
+              <button type="button" class="mx-1 btn btn-primary "><a class="text-decoration-none text-white" href="/">Cancel</a></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
